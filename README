@@ -1,0 +1,27 @@
+Интерфейс к яндекс.директ на php.
+
+---
+
+Установка:
+- Через composer
+- Вручную подключить bu.defun ( https://github.com/Bubujka/bu.defun ) и yadr.php
+
+Где-то в конфигах:
+  <?php
+  yadr\production(true); 
+  yadr\login('xxxxxx');
+  yadr\app_id('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+  yadr\token('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+
+
+И можно использовать:
+  <?php
+  print_r(yadr\GetCampaignsList());
+
+---
+
+Можно создать врапперы для методов директа в глобальном нэймспэйсе:
+  <?php
+  yadr\create_wrappers(true);
+  print_r(GetCampaignsList());
+

@@ -1,0 +1,23 @@
+{
+  "name": "bubujka/yadr",
+  "type": "library",
+  "description": "Yandex.direct wrapper",
+  "keywords": ["api", "yandex"],
+  "homepage": "http://github.com/Bubujka/yadr",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aleksej Kamynin",
+      "email": "zendzirou@gmail.com",
+      "homepage": "http://bubujka.org",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "bubujka/def": "dev-master"
+  },
+  "autoload": {
+    "files": ["load.php"]
+  }
+}
