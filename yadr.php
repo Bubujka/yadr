@@ -1,6 +1,7 @@
 <?php
 
 def_accessor('yadr\production', false);
+def_accessor('yadr\live_version', true);
 def_accessor('yadr\login', null);
 def_accessor('yadr\token', null);
 def_accessor('yadr\app_id', null);
@@ -21,10 +22,14 @@ def('yadr\method', function($method, $params = array()){
   $login = yadr\login();
   $token = yadr\token();
   $app_id = yadr\app_id();
-  if(yadr\production())
-    $backend = 'https://api.direct.yandex.ru/json-api/v4/';
-  else
+  if(yadr\production()){
+    if(yadr\live_version())
+      $backend = 'https://api.direct.yandex.ru/live/v4/json/';
+    else
+      $backend = 'https://api.direct.yandex.ru/json-api/v4/';
+  }else{
     $backend = 'https://api-sandbox.direct.yandex.ru/json-api/v4/';
+  }
    
   $request = array(
       'token'=> $token, 
